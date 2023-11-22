@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Out</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body id="checkout">
+    <!-- header and nav -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <span class="navbar-brand"
+          ><img
+            src="{% static 'images/logo.png' %}"
+            class="img-fluid rounded ml-auto"
+            alt="Party Time's Logo"
+            width="60px"
+        /></span>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#nav_bar"
+          id="nav_btn"
+        >
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div id="nav_bar" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item text-md-center">
+              <a href="{% url 'partytime' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'services' %}" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+            </li>
+            <li class="nav-item text-md-center">
+              <a href="{% url 'checkout' %}" class="nav-link active"
+                ><i class="fa fa-briefcase" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section id="content">
+      <h1 class="text-center px-5 font-weight-bold">Check Out</h1>
+      <!-- checkout table -->
+      <div class="table-responsive">
+        <table class="table table-hover shadow text-center">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" colspan="2"></th>
+              <th scope="col">Packages</th>
+              <th scope="col">Price</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="checkout_items">
+            <!-- booked items -->
+          </tbody>
+        </table>
+        <div class="w-100 text-center p-4">
+          <label for="s_ins" class="d-block"
+            ><h4>Special Instructions</h4></label
+          >
+          <textarea
+            name="s_ins"
+            id="s_ins"
+            cols="70"
+            rows="10"
+            class="form-control mx-auto my-3 p-3"
+          ></textarea>
+          <label for="date">Select a Date:</label>
+          <input type="date" id="date" name="date" required />
+
+          <h2 id="grand_total" class="m-3"></h2>
+
+          <button class="btn btn-dark" id="checkout_btn">Check Out</button>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="col-12 text-center">
+          <h2 class="my-2">Contact Developer</h2>
+          <p>Email: htetarkarlevi@example.com</p>
+          <p>Phone: +959 791 444 137</p>
+          <!-- Social Media Icons -->
+          <div class="social-icons mt-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=100056058653578"
+              target="_blank"
+              class="text-light mr-3"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/htet-arkar-6b6b02240"
+              target="_blank"
+              class="text-light mr-3"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/HtetArKar2246"
+              target="_blank"
+              class="text-light"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        let list = JSON.parse(localStorage.getItem("list")) || [];
+        const checkout_table = document.querySelector('table tbody');
+        const grand_total = document.getElementById('grand_total');
+    
+        function updateCheckout() {
+          checkout_table.innerHTML = '';
+          let total = 0;
+          for (let i = 0; i < list.length; i++) {
+            const price = parseFloat(list[i].price.slice(1)); // Parse the price as a float
+            const checkout_item = document.createElement("tr");
+            checkout_item.innerHTML = `
+              <th scope="row">${i + 1}</th>
+              <td name="image"><img src="${list[i].image}" alt="${list[i].service}" class="img-fluid rounded"></td>
+              <td colspan="2" name="service">${list[i].service}</td>
+              <td name="price">${"$" + price}</td>
+              <td><i class="fas fa-trash-alt delete_btn" data-index="${i}"></i></td>
+            `;
+            checkout_table.appendChild(checkout_item);
+    
+            total += price;
+          }
+    
+          grand_total.innerText = "$" + total;
+    
+          const deleteButtons = document.querySelectorAll(".delete_btn");
+          deleteButtons.forEach((deleteButton) => {
+            deleteButton.addEventListener("click", (event) => {
+              const index = event.target.getAttribute("data-index");
+              list.splice(index, 1);
+              updateCheckout();
+              localStorage.setItem("list", JSON.stringify(list));
+            });
+          });
+        }
+    
+        updateCheckout();
+      });
+    </script>    
+  </body>
+</html>

@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body id="faq">
+    <!-- header and nav -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+          <span class="navbar-brand"
+            ><img
+              src="{% static 'images/logo.png' %}"
+              class="img-fluid rounded ml-auto"
+              alt="Party Time's Logo"
+              width="60px"
+          /></span>
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#nav_bar"
+            id="nav_btn"
+          >
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          </button>
+          <div id="nav_bar" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item text-md-center">
+                <a href="{% url 'partytime' %}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'services' %}" class="nav-link">Services</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'about' %}" class="nav-link">About</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'faq' %}" class="nav-link active">FAQ</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+              </li>
+              <li class="nav-item text-md-center">
+                <a href="{% url 'checkout' %}" class="nav-link"
+                  ><i class="fa fa-briefcase" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <section id="content">
+        <h1 class="text-center px-5 font-weight-bold">Frequently Asked Questions</h1>
+        <div class="container m-5 px-5">
+            <!-- Frequently Asked Questions -->
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer1">
+                <h4 class="card-title p-2">How can I book your services for my event?</h4>
+                <div id="answer1" class="collapse p-2">
+                    <p>You can book our services by contacting us through our website, email, or phone. Our team will
+                        guide you through the booking process.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer2">
+                <h4 class="card-title p-2">What types of events do you specialize in?</h4>
+                <div id="answer2" class="collapse p-2">
+                    <p>We specialize in themed events, marquee parties, special celebrations, and various forms of
+                        entertainment.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer3">
+                <h4 class="card-title p-2">What packages do you offer?</h4>
+                <div id="answer3" class="collapse p-2">
+                    <p>We offer Bronze, Silver, and Gold packages, each with a unique set of services. You can choose
+                        the one that best suits your event.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer4">
+                <h4 class="card-title p-2">Can I customize a package to fit my specific needs?</h4>
+                <div id="answer4" class="collapse p-2">
+                    <p>Yes, we offer customized packages for clients with specific requirements. Contact us to discuss
+                        your customization options.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer5">
+                <h4 class="card-title p-2">Do you provide additional services like catering and decoration?</h4>
+                <div id="answer5" class="collapse p-2">
+                    <p>Yes, we provide services like catering and decoration as part of our packages. You can choose the
+                        services that suit your event's needs.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer6">
+                <h4 class="card-title p-2">What is the booking process for entertainment services?</h4>
+                <div id="answer6" class="collapse p-2">
+                    <p>Booking entertainment services is simple. Just let us know your preferences, and we'll take care
+                        of the rest. We offer various entertainment options for your event.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer7">
+                <h4 class="card-title p-2">What forms of payment do you accept?</h4>
+                <div id="answer7" class="collapse p-2">
+                    <p>We accept various forms of payment, including credit cards, bank transfers, and other secure
+                        payment methods. Our team will provide you with payment details during the booking process.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer8">
+                <h4 class="card-title p-2">Do you assist with event planning beyond the provided packages?</h4>
+                <div id="answer8" class="collapse p-2">
+                    <p>Yes, we offer additional event planning services beyond our packages. If you have specific
+                        requirements or need assistance with unique aspects of your event, feel free to contact us for
+                        personalized planning.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer9">
+                <h4 class="card-title p-2">Can I make changes to my booking after confirmation?</h4>
+                <div id="answer9" class="collapse p-2">
+                    <p>You can make changes to your booking after confirmation, subject to availability. Contact our
+                        team, and we will do our best to accommodate your requests and ensure your event meets your
+                        expectations.</p>
+                </div>
+            </div>
+            <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#answer10">
+                <h4 class="card-title p-2">How can I contact Party Time for further assistance?</h4>
+                <div id="answer10" class="collapse p-2">
+                    <p>You can contact Party Time for further assistance through our website's contact form, via email
+                        at partytime@mail.com, or by phone at +959 123 456 789. We are here to answer any questions and
+                        help you plan your event.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="col-12 text-center">
+                <h2 class="my-2">Contact Developer</h2>
+                <p>Email: htetarkarlevi@example.com</p>
+                <p>Phone: +959 791 444 137</p>
+                <!-- Social Media Icons -->
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/profile.php?id=100056058653578" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/htet-arkar-6b6b02240" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HtetArKar2246" target="_blank" class="text-light"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

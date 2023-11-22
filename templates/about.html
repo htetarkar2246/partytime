@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body id="about">
+   <!-- header and nav -->
+   <header class="fixed-top">
+    <nav class="navbar navbar-expand-lg">
+      <span class="navbar-brand"
+        ><img
+          src="{% static 'images/logo.png' %}"
+          class="img-fluid rounded ml-auto"
+          alt="Party Time's Logo"
+          width="60px"
+      /></span>
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#nav_bar"
+        id="nav_btn"
+      >
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <div id="nav_bar" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item text-md-center">
+            <a href="{% url 'partytime' %}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'services' %}" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'about' %}" class="nav-link active">About</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+          </li>
+          <li class="nav-item text-md-center">
+            <a href="{% url 'checkout' %}" class="nav-link"
+              ><i class="fa fa-briefcase" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section id="content">
+        <h1 class="text-center px-5 font-weight-bold">Party Time</h1>
+        <div id="party_time_icon">
+            <img src="{% static "images/logo.png" %}" alt="Party Time" class="img-fluid rounded mt-3 shadow" width="200px" height="200px">
+        </div>
+        <div class="about_paragraph">
+            <h3 class="text-center mt-5">Welcome To Party Time</h3>
+            <p class="text-justify p-5 pt-0">
+                Party Time is an event planning company dedicated to meeting the growing demand for its services and
+                products. With expertise in organizing themed events, marquee parties, special celebrations, and
+                entertainment, Party Time also offers additional services like fundraisers, bespoke catering, and sound
+                and lighting. Clients can choose from Bronze, Silver, and Gold packages, each offering an array of
+                services, from decorations to entertainment and catering. Customized packages are also available for
+                clients seeking tailor-made solutions. The company's primary goal is to enhance its online presence
+                through a modern and engaging website that provides clients with comprehensive information about its
+                services, products, and package options. This website is designed to be accessible and adaptive,
+                ensuring a seamless experience for both mobile and desktop users while maintaining inclusivity for a
+                wide range of visitors. It also enables clients to easily connect with Party Time for further inquiries,
+                reflecting the company's commitment to excellent customer service and engagement.
+            </p>
+        </div>
+        <!-- image slider -->
+        <div class="pt_img_slider w-80">
+            <div id="image_displayer" class="carousel slide text-center">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static "images/Party-1.jpg" %}" alt="Party Image One" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static "images/Party-2.jpg" %}" alt="Party Image Two" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static "images/Party-3.jpg" %}" alt="Party Image Three" class="img-fluid">
+                    </div>
+                </div>
+                <a href="#image_displayer" class="carousel-control-prev" data-slide="prev">
+                    <span class="carousel-control-prev-icon text-danger"></span>
+                </a>
+                <a href="#image_displayer" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon text-danger"></span>
+                </a>
+            </div>
+        </div>
+        <div class="about_paragraph">
+            <h3 class="text-center mt-5">Our Completed Events</h3>
+            <p class="text-justify p-5 pt-0">
+
+                At Party Time, we take pride in the successful completion of numerous events and gatherings. Our
+                experienced team has a proven track record of turning ordinary occasions into extraordinary memories.
+                Whether it's a dazzling themed event, an elegant marquee party, a heartwarming special celebration, or a
+                high-energy entertainment show, we've done it all.
+
+                Our portfolio includes a diverse range of events, from intimate fundraisers to grand-scale galas. We've
+                created breathtaking setups with bespoke catering, mesmerizing themes and props, beautifully designed
+                invitations, and state-of-the-art sound and lighting solutions.
+
+                Notably, our packages—Bronze, Silver, and Gold—have been instrumental in bringing our clients' dreams to
+                life. From the Bronze package's room and table decorations, DJ entertainment, and cold buffet to the
+                Silver package's added services, including invitation design, party cost management, live band
+                entertainment, and a delightful buffet with soft drinks. And let's not forget the Gold package, offering
+                a complete experience with staff in attendance, guest accommodation arrangements, booking
+                transportation, live band entertainment, a magician, and a scrumptious hot and cold buffet with soft
+                drinks.
+
+                In addition to our pre-set packages, we're always open to customizing our services to fit the unique
+                needs of your specific event. Whether you need additional decorations, extra staff, or other special
+                arrangements, we encourage you to reach out to us to discuss how we can make your event truly
+                exceptional.
+
+                At Party Time, every event is a new opportunity to create magical moments and lasting memories. We look
+                forward to adding your event to our list of successfully completed activities.
+
+            </p>
+        </div>
+    </section>
+    <footer class="bg-dark text-light py-4 text-center">
+        <div class="container">
+            <div class="col-12 text-center">
+                <h2 class="my-2">Contact Developer</h2>
+                <p>Email: htetarkarlevi@example.com</p>
+                <p>Phone: +959 791 444 137</p>
+                <!-- Social Media Icons -->
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/profile.php?id=100056058653578" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/htet-arkar-6b6b02240" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HtetArKar2246" target="_blank" class="text-light"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

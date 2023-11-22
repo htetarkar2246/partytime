@@ -1,0 +1,207 @@
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Services</title>
+        <link rel="stylesheet" href="{% static "style.css" %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    </head>
+
+    <body id="services">
+    <!-- header and nav -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <span class="navbar-brand"><img src="{% static 'images/logo.png' %}" class="img-fluid rounded ml-auto"
+                    alt="Party Time's Logo" width="60px" /></span>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#nav_bar" id="nav_btn">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div id="nav_bar" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'partytime' %}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'services' %}" class="nav-link active">Services</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'about' %}" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+                    </li>
+                    <li class="nav-item text-md-center">
+                        <a href="{% url 'checkout' %}" class="nav-link"><i class="fa fa-briefcase"
+                                aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section id="content">
+        <!-- services_packages -->
+        <div class="pt_packages container-fluid py-3">
+            <h2 class="text-center font-weight-bold p-4 mt-3">Packages</h2>
+            <div class="container d-none d-lg-block">
+                <div class="package-wrapper d-lg-flex shadow">
+                    <div class="package-image">
+                        <img src="{% static 'images/gold-package.jpg' %}" alt="Gold Package" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="package-details">
+                        <h2 class="package text-center">Gold Package</h2>
+                        <p class="text-justify">
+                            Elevate your event to the highest level with our prestigious Gold Package. Building upon the offerings of the Silver Package, the Gold Package provides the added assurance of experienced staff to oversee every detail. We also take care of guest accommodations and transportation. Entertainment reaches its pinnacle with live music and the mystique of a magician. Delight in a sumptuous feast with both hot and cold buffet options, along with an array of refreshing soft drinks. <span class="price badge badge-success">$9999</span> for this service.
+                        </p>
+                        <div>
+                            <a class="btn mx-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-wrapper d-lg-flex shadow">
+                    <div class="package-image">
+                        <img src="{% static 'images/silver-package.jpg' %}" alt="Silver Package" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="package-details">
+                        <h2 class="package text-center">Silver Package</h2>
+                        <p class="text-justify">
+                            Step up the sophistication with our Silver Package, which not only includes all the features of the Bronze Package but also offers professionally designed invitations, post-event cleanup, live band entertainment, and an upgraded catering experience with both a cold buffet and a selection of soft drinks. <span class="price badge badge-success">$7999</span>for this service
+                        </p>
+                        <div>
+                            <a class="btn mx-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-wrapper d-lg-flex shadow">
+                    <div class="package-image">
+                        <img src="{% static 'images/bronze-package.jpg' %}" alt="Bronze Package" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="package-details">
+                        <h2 class="package text-center">Bronze Package</h2>
+                        <p class="text-justify">
+                            Our Bronze Package is an excellent choice for those seeking an affordable event experience. This package includes room decorations featuring balloons and banners, attractive table centerpieces, a talented DJ for entertainment, and a delectable cold buffet to satisfy your guests. <span class="price badge badge-success">$4999</span>for this service
+                        </p>
+                        <div>
+                            <a class="btn mx-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-lg-none" id="sec">
+                <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#gold_package">
+                    <img  src="{% static 'images/gold-package.jpg' %}" alt="Gold Package" class="p-2 img-fluid img-thumbnail mx-auto" width="300px">
+                    <div id="gold_package" class="collapse p-2">
+                        <h2 class="package text-center">Gold Package</h2>
+                        <p class="text-justify p-3">Elevate your event to the highest level with our prestigious Gold Package. Building upon the offerings of the Silver Package, the Gold Package provides the added assurance of experienced staff to oversee every detail. We also take care of guest accommodations and transportation. Entertainment reaches its pinnacle with live music and the mystique of a magician. Delight in a sumptuous feast with both hot and cold buffet options, along with an array of refreshing soft drinks. <span class="price badge badge-success">$9999</span>for this service.</p>
+                        <div class="w-100 text-center">
+                                <a class="btn">Book Now</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#silver_package">
+                    <img  src="{% static 'images/silver-package.jpg' %}" alt="Silver Package" class="p-2 img-fluid img-thumbnail mx-auto" width="300px">
+                    <div id="silver_package" class="collapse p-2">
+                        <h2 class="package text-center">Silver Package</h2>
+                        <p class="text-justify p-3">Step up the sophistication with our Silver Package, which not only includes all the features of the Bronze Package but also offers professionally designed invitations, post-event cleanup, live band entertainment, and an upgraded catering experience with both a cold buffet and a selection of soft drinks.<span class="price badge badge-success">$7999</span>for this service</p>
+                        <div class="w-100 text-center">
+                                <a class="btn">Book Now</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="card shadow rounded p-2 m-3" data-toggle="collapse" data-target="#bronze_package">
+                    <img  src="{% static 'images/bronze-package.jpg' %}" alt="Bronze Package" class="p-2 img-fluid img-thumbnail mx-auto" width="300px">
+                    <div id="bronze_package" class="collapse p-2">
+                        <h2 class="package text-center">Bronze Package</h2>
+                        <p class="text-justify p-3">Our Bronze Package is an excellent choice for those seeking an affordable event experience. This package includes room decorations featuring balloons and banners, attractive table centerpieces, a talented DJ for entertainment, and a delectable cold buffet to satisfy your guests.<span class="price badge badge-success">$4999</span>for this service</p>
+                        <div class="w-100 text-center">
+                                <a class="btn">Book Now</a>
+                            </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+        <!-- services_services -->
+            <div class="pt_services container-fluid py-3 mx-auto">
+                <h2 class="text-center font-weight-bold p-4 mt-3">Services</h2>
+                <div class="card-columns my-2">
+                    {%for service in services%}
+                    <div class="card shadow m-3 text-center">
+                        <div class="img_frame">
+                            <img src="{% static service.image %}" alt="{{service.service}}" class="card-img m-3" />
+                        </div>
+                        <div class="card-body">
+                            <span class="price badge badge-success">${{service.price}}</span>
+                            <h4 class="card-title mx-3">{{service.service}}</h4>
+                            <div class="text-center">
+                                <a class="btn mx-5">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}  
+            </div>
+    </section>
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="col-12 text-center">
+                <h2 class="my-2">Contact Developer</h2>
+                <p>Email: htetarkarlevi@example.com</p>
+                <p>Phone: +959 791 444 137</p>
+                <!-- Social Media Icons -->
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/profile.php?id=100056058653578" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/htet-arkar-6b6b02240" target="_blank"
+                        class="text-light mr-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HtetArKar2246" target="_blank" class="text-light"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let list = [];
+
+        if (JSON.parse(localStorage.getItem("list")) != null) {
+          list = JSON.parse(localStorage.getItem("list"));
+        }
+        
+        document.addEventListener('DOMContentLoaded', (event) => {
+          const booking = document.querySelectorAll(".btn");
+          const images_services = document.querySelectorAll(".card-img");
+          const images_packages = document.querySelectorAll(".pt_packages img");
+          const services = document.querySelectorAll(".card-title");
+          const packages = document.querySelectorAll(".package");
+          const prices = document.querySelectorAll(".price");
+          const services_list = [...packages, ...services];
+          const images = [...images_packages, ...images_services];
+        
+          for (let i = 0; i < booking.length; i++) {
+            booking[i].addEventListener('click', () => {
+              const image = images[i].getAttribute('src');
+              const service = services_list[i].innerText;
+              const price = prices[i].innerText;
+              list.push({ image, service, price });
+              localStorage.setItem("list", JSON.stringify(list));
+            });
+          }
+        });
+        
+    </script>
+    </body>
+
+
+    </html>
